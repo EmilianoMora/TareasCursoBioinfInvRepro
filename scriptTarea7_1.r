@@ -18,7 +18,7 @@ class(fullmat)
 head (fullmat, n=6)
 
 #4) determinamos el numero de muestras que existen en nuetra base de datos es 165 
-
+n.row(fullmat)
 
 #5) determinamos que se tienen observaciones de 19 estados
 
@@ -40,4 +40,16 @@ mean (fullmat$Altitud)
 
 max(fullmat$Altitud)
 min(fullmat$Altitud)
+
+#10) se crea una nueva base de datos solo con las muestras de la raza OLotillo 
+Olotillo <- dplyr::filter(fullmat, Raza =="Olotillo")
+
+#11) se crea una nueva base de datos solo con las muestars de las razas Reventador, Jala y Ancho 
+
+masRazas <- dplyr::filter(fullmat, Raza == c("Reventador","Jala","Ancho"))
+
+#12) se crea un archivo con extension ".csv" llamado "submat.csv"
+
+write.csv(masRazas, file="~/Desktop/BioinfinvRepro/Unidad7/Prac_Uni7/maices/meta/submat.csv")
+
 
